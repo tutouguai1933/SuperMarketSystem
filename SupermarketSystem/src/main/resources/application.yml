@@ -1,0 +1,37 @@
+server:
+  port: 8085
+
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 2.9
+  try-host: http://localhost:${server.port}
+
+
+
+#配置数据源
+spring:
+  application:
+    name: SupermarketSystem
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: sms_user
+    password: Du1933du
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:mysql://127.0.0.1:3306/smbms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+#    driverClassName: com.mysql.jdbc.Driver
+#    username: root
+#    password: 1933
+
+
+
+#配置日志
+mybatis-plus:
+  type-aliases-package: com.djy.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+
